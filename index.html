@@ -1,58 +1,132 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>تست ارسال پیام تلگرام</title>
+<title>Telegram Test</title>
+
 <style>
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; min-height: 100vh; display: grid; place-items: center;
-    padding: 24px; background: #10100f; color: #f2eee6;
-    font-family: Tahoma, Arial, sans-serif;
-  }
-  main {
-    width: min(100%, 420px); padding: 30px 24px; text-align: center;
-    background: #20201c; border: 1px solid rgba(201,170,114,.35);
-    border-radius: 18px;
-  }
-  h1 { color: #e7d2a8; font-size: 21px; }
-  #status { margin-top: 22px; line-height: 2; }
+body {
+  background:#10100f;
+  color:#f2eee6;
+  font-family:Tahoma;
+  display:grid;
+  place-items:center;
+  min-height:90vh;
+}
+main {
+  background:#20201c;
+  border:1px solid #c9aa72;
+  border-radius:18px;
+  padding:30px;
+  width:80%;
+  max-width:400px;
+  text-align:center;
+}
+button {
+  background:#c9aa72;
+  border:0;
+  padding:14px 25px;
+  border-radius:10px;
+  font-size:15px;
+  cursor:pointer;
+}
+#status {
+  color:#e7d2a8;
+  line-height:2;
+}
 </style>
 </head>
+
 <body>
 <main>
-  <h1>تست ارسال پیام تلگرام</h1>
-  <p id="status">در حال ارسال درخواست...</p>
+  <h2>سامانه مدیریت مهمانان</h2>
+  <p>تست ارتباط با ربات تلگرام</p>
+  <button onclick="sendMessage()">ارسال گزارش آزمایشی</button>
+  <p id="status">آماده ارسال</p>
 </main>
 
 <script>
-  // توکن جدید ربات را اینجا وارد کن؛ توکن قبلی را در BotFather باطل کن.
-  const BOT_TOKEN = "9045759085:AAH8sMz06IshjmnlHHFQZMEb7wDIUoE7cVQ";
-  const CHAT_ID = "1627671786";
 
-  const message = "مهمون جدید داری🫠\nنام:مهمون تستی\nمیاد؟اره";
-  const status = document.getElementById("status");
+// توکن جدید ربات را اینجا قرار بده
+const TOKEN = "PASTE_NEW_TOKEN_HERE";
 
-  if (!BOT_TOKEN || BOT_TOKEN === "PASTE_NEW_BOT_TOKEN_HERE") {
-    status.textContent = "ابتدا توکن جدید ربات را داخل فایل وارد کن.";
-  } else {
-    const url =
-      "https://api.telegram.org/bot" + encodeURIComponent(BOT_TOKEN) +
-      "/sendMessage?chat_id=" + encodeURIComponent(CHAT_ID) +
-      "&text=" + encodeURIComponent(message);
+const CHAT_ID = "1627671786";
 
-    // ارسال با Image beacon تا به محدودیت CORS خواندن پاسخ برخورد نکنیم.
-    const beacon = new Image();
-    beacon.onload = () => {
-      status.textContent = "درخواست ارسال شد؛ پاسخ تلگرام از این روش قابل تأیید نیست.";
-    };
-    beacon.onerror = () => {
-      status.textContent = "درخواست ارسال شد؛ وضعیت نهایی قابل بررسی نیست.";
-    };
-    beacon.src = url;
-    status.textContent = "درخواست ارسال شد؛ در حال بررسی ارتباط...";
+function sendMessage() {
+
+  if (TOKEN === "PASTE_NEW_TOKEN_HERE") {
+    document.getElementById("status").innerText =
+      "ابتدا توکن ربات را وارد کن";
+    return;
   }
+
+  const now = new Date();
+
+  const date = new Intl.DateTimeFormat("fa-IR-u-ca-persian", {
+    timeZone: "Asia/Tehran",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit"
+  }).format(now);
+
+  const time = new Intl.DateTimeFormat("fa-IR", {
+    timeZone: "Asia/Tehran",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false
+  }).format(now);
+
+  const registrationID =
+    "GST-" + Math.floor(100000 + Math.random() * 900000);
+
+  const message = `
+✦ سامانه مدیریت مهمانان
+━━━━━━━━━━━━━━━━━━
+
+🟢 ثبت مهمان جدید
+
+👤 اطلاعات مهمان
+
+نام و نام خانوادگی: مهمون تستی
+وضعیت حضور: بله، تأیید شد
+
+شناسه ثبت‌نام: ${registrationID}
+
+━━━━━━━━━━━━━━━━━━
+
+🗓 اطلاعات ثبت‌نام
+
+تاریخ ثبت: ${date}
+ساعت ثبت: ${time}
+منطقه زمانی: تهران
+
+منبع ثبت: وب‌سایت مراسم
+وضعیت پردازش: درخواست ارسال
+
+━━━━━━━━━━━━━━━━━━
+گزارش خودکار سامانه ثبت مهمانان
+  `.trim();
+
+  const url =
+    "https://api.telegram.org/bot" +
+    TOKEN +
+    "/sendMessage?chat_id=" +
+    encodeURIComponent(CHAT_ID) +
+    "&text=" +
+    encodeURIComponent(message);
+
+  // باز کردن پاسخ واقعی API تلگرام
+  const resultWindow = window.open(url, "_blank");
+
+  document.getElementById("status").innerText =
+    resultWindow
+      ? "پاسخ API در تب جدید باز شد؛ نتیجه را بررسی کن."
+      : "پنجره باز نشد؛ اجازه باز شدن پنجره جدید را بده.";
+}
+
 </script>
 </body>
 </html>
