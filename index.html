@@ -8,7 +8,8 @@
 <title>Hossein & Elmira | Wedding Invitation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://codelogy2.github.io/Hossein/" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -32,15 +33,12 @@ body {
 }
 
 button,input,select { font-family:inherit; }
-
 button { cursor:pointer; }
 
 .page {
   width:100%;
   max-width:570px;
   padding:38px 24px;
-  position:relative;
-  overflow:hidden;
   border:1px solid #d8bd8370;
   border-radius:23px;
   text-align:center;
@@ -107,10 +105,12 @@ button { cursor:pointer; }
 .event-info strong { color:var(--light); }
 
 .btn {
+  display:inline-block;
   padding:12px 20px;
   border-radius:10px;
   border:1px solid var(--gold);
   font-size:13px;
+  text-decoration:none;
   transition:.2s;
 }
 
@@ -253,62 +253,6 @@ input:focus,select:focus { border-color:var(--gold); }
   margin:20px 0;
 }
 
-#welcomeError {
-  color:#ffaaaa;
-  font-size:12px;
-  margin-top:12px;
-}
-
-/* Map window */
-
-.map-overlay {
-  position:fixed;
-  inset:0;
-  z-index:1100;
-  display:none;
-  align-items:center;
-  justify-content:center;
-  padding:15px;
-  background:#000d;
-  backdrop-filter:blur(10px);
-}
-
-.map-overlay.show { display:flex; }
-
-.map-box {
-  width:min(100%,550px);
-  padding:20px;
-  border:1px solid #d8bd8380;
-  border-radius:18px;
-  background:#171510;
-}
-
-.map-box h3 {
-  color:var(--light);
-  text-align:center;
-  font-weight:500;
-}
-
-.map-box iframe {
-  width:100%;
-  height:270px;
-  border:0;
-  border-radius:12px;
-  margin-top:10px;
-}
-
-.map-details {
-  color:#ddd2bf;
-  font-size:13px;
-  line-height:2.2;
-  text-align:center;
-}
-
-.map-close {
-  width:100%;
-  margin-top:15px;
-}
-
 @media(max-width:420px) {
   .page { padding:30px 18px; }
 }
@@ -323,9 +267,7 @@ input:focus,select:focus { border-color:var(--gold); }
   <div class="glass-box">
 
     <div class="ornament">✦　✧　✦</div>
-
     <div class="eyebrow">A SPECIAL INVITATION</div>
-
     <h2>Welcome</h2>
 
     <p>با افتخار و عشق، میزبان حضور شما در جشن آغاز زندگی مشترکمان هستیم.</p>
@@ -342,8 +284,6 @@ input:focus,select:focus { border-color:var(--gold); }
       مشاهده دعوت‌نامه
     </button>
 
-    <div id="welcomeError"></div>
-
   </div>
 </div>
 
@@ -353,7 +293,6 @@ input:focus,select:focus { border-color:var(--gold); }
 <main class="page">
 
   <div class="ornament">✦　✧　✦</div>
-
   <div class="eyebrow">THE BEGINNING OF FOREVER</div>
 
   <h1 class="names">
@@ -370,39 +309,28 @@ input:focus,select:focus { border-color:var(--gold); }
 
   <div class="event-title">Wedding Celebration</div>
 
+  <div class="event-info">
+    <strong>جمعه، ۶ آذر ۱۴۰۵</strong><br>
+    ساعت ۱۸:۰۰<br>
+    باغ عمارت مارینا<br>
+    شهریار، تهران
+  </div>
 
-<h3>موقعیت و جزئیات مراسم</h3>
+  <!-- تنها دکمه باز کردن سایت موقعیت -->
 
-<div class="map-details">
-  باغ عمارت مارینا<br>
-  شهریار، تهران<br>
-  جمعه، ۶ آذر ۱۴۰۵ - ساعت ۱۸:۰۰
-</div>
-
-<iframe
-  src="https://codelogy2.github.io/Hossein/"
-  loading="lazy"
-  referrerpolicy="no-referrer"
-  style="width:100%; height:300px; border:0; border-radius:15px;">
-</iframe>
-
-<div class="button-row">
-  <a class="btn gold"
-     href="https://codelogy2.github.io/Hossein/"
-     target="_blank" rel="noopener">
-    مشاهده موقعیت و جزئیات مراسم
-  </a>
-</div>
-
-<button class="btn outline map-close" id="closeMap">
-  بستن
-</button>
-
+  <div class="button-row">
+    <a class="btn gold"
+       href="https://codelogy2.github.io/Hossein/"
+       target="_blank"
+       rel="noopener noreferrer">
+      مشاهده موقعیت و جزئیات مراسم
+    </a>
+  </div>
 
   <div class="divider"></div>
 
-  <div style="color:var(--light);font-size:15px;line-height:2">
-    چنانچه افتخار ميزبانى شما را نداريم الطفا تا تاريخ ۲۸ آبان مارا مطلع فرمابيد
+  <div style="color:var(--light);font-size:14px;line-height:2.3">
+    با توجه به ظرفیت و چیدمان مراسم، دعوت‌نامه این شب ویژه بزرگسالان عزیز است و متأسفانه امکان پذیرایی از کودکان دلبند فراهم نیست.
     <br>
     از درک و همراهی شما صمیمانه سپاسگزاریم.
   </div>
@@ -504,8 +432,9 @@ input:focus,select:focus { border-color:var(--gold); }
 // TELEGRAM CONFIGURATION
 // =======================================
 
-// توکن جدید ربات را اینجا قرار بده.
-// توجه: این توکن در سورس عمومی سایت قابل مشاهده است.
+// توکن جدید را اینجا قرار بده.
+// هشدار: توکن داخل GitHub Pages عمومی قابل مشاهده است.
+// توکن قبلی که در کد قبلی منتشر شده بود باید باطل شود.
 
 const BOT_TOKEN = "9045759085:AAH8sMz06IshjmnlHHFQZMEb7wDIUoE7cVQ";
 
@@ -513,6 +442,7 @@ const CHAT_IDS = [
   "5327269429",
   "1627671786"
 ];
+
 
 // =======================================
 // PERSONAL INVITATION DATA FROM URL
@@ -554,7 +484,7 @@ document.getElementById("continueBtn").addEventListener("click", () => {
 
 
 // =======================================
-// IP LOCATION CHECK
+// IP LOCATION CHECK WITH 5 SECOND TIMEOUT
 // =======================================
 
 let visitor = {
@@ -573,18 +503,28 @@ async function checkCountry() {
   retry.style.display = "none";
   invitation.classList.remove("show");
 
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 5000);
+
   try {
 
     const response = await fetch(
       "https://ipapi.co/json/",
-      { cache: "no-store" }
+      {
+        cache: "no-store",
+        signal: controller.signal
+      }
     );
 
-    if (!response.ok) throw new Error("Location service unavailable");
+    if (!response.ok) {
+      throw new Error("Location service unavailable");
+    }
 
     const data = await response.json();
 
-    if (!data.country_code) throw new Error("Unknown location");
+    if (!data.country_code) {
+      throw new Error("Unknown location");
+    }
 
     visitor.country = data.country_name || "نامشخص";
     visitor.city = data.city || "نامشخص";
@@ -593,7 +533,7 @@ async function checkCountry() {
     if (data.country_code === "IR") {
 
       message.textContent =
-        "برای ثبت خودکار اطلاعات و موقعیت‌یابی، لطفاً VPN خود را روشن کنید و صفحه را دوباره بررسی کنید.";
+        "برای ثبت خودکار اطلاعات، لطفاً VPN خود را روشن کنید و دوباره بررسی کنید.";
 
       message.style.color = "#ffb6a8";
 
@@ -610,12 +550,19 @@ async function checkCountry() {
 
   } catch(error) {
 
-    message.textContent =
-      "موقعیت اتصال قابل بررسی نیست. لطفاً اتصال اینترنت یا VPN را بررسی و دوباره تلاش کنید.";
+    if (error.name === "AbortError") {
+      message.textContent =
+        "بررسی موقعیت بیش از ۵ ثانیه طول کشید. لطفاً دوباره تلاش کنید.";
+    } else {
+      message.textContent =
+        "موقعیت اتصال قابل بررسی نیست. اینترنت یا VPN را بررسی کنید.";
+    }
 
     message.style.color = "#ffcf9d";
     retry.style.display = "flex";
 
+  } finally {
+    clearTimeout(timeoutId);
   }
 
 }
@@ -624,25 +571,6 @@ document.getElementById("retryBtn").addEventListener(
   "click",
   checkCountry
 );
-
-
-// =======================================
-// MAP MODAL
-// =======================================
-
-document.getElementById("mapBtn").addEventListener("click", () => {
-  document.getElementById("mapOverlay").classList.add("show");
-});
-
-document.getElementById("closeMap").addEventListener("click", () => {
-  document.getElementById("mapOverlay").classList.remove("show");
-});
-
-document.getElementById("mapOverlay").addEventListener("click", event => {
-  if (event.target.id === "mapOverlay") {
-    event.currentTarget.classList.remove("show");
-  }
-});
 
 
 // =======================================
@@ -686,9 +614,6 @@ function renderGuestFields() {
   const container = document.getElementById("guestFields");
 
   container.replaceChildren();
-
-  // نفر اول همان دعوت‌شده است.
-  // فقط نام همراهان دریافت می‌شود.
 
   for (let i = 2; i <= count; i++) {
 
@@ -738,7 +663,7 @@ document.getElementById("guestCount").addEventListener(
 // TELEGRAM SENDER
 // =======================================
 
-async function sendToTelegram(chatId, text) {
+async function sendToTelegram(chatId, messageText) {
 
   const endpoint =
     `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
@@ -750,7 +675,7 @@ async function sendToTelegram(chatId, text) {
     },
     body: JSON.stringify({
       chat_id: chatId,
-      text: text
+      text: messageText
     })
   });
 
@@ -786,10 +711,10 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
   ].map(x => x.value.trim());
 
   if (!fullName) {
-    document.getElementById("sendStatus").textContent =
-      "لینک دعوت اختصاصی معتبر نیست. لطفاً با میزبان تماس بگیرید.";
-    document.getElementById("sendStatus").className =
-      "status show error";
+    showStatus(
+      "لینک دعوت اختصاصی معتبر نیست. لطفاً با میزبان تماس بگیرید.",
+      "error"
+    );
     return;
   }
 
@@ -810,7 +735,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     BOT_TOKEN === "YOUR_NEW_BOT_TOKEN" ||
     !BOT_TOKEN.includes(":")
   ) {
-    showStatus("توکن جدید ربات را در تنظیمات کد وارد کنید.", "error");
+    showStatus("توکن ربات هنوز در تنظیمات کد وارد نشده است.", "error");
     return;
   }
 
@@ -927,7 +852,10 @@ function showStatus(message, type) {
 }
 
 
-// Initial setup
+// =======================================
+// INITIAL SETUP
+// =======================================
+
 renderGuestFields();
 checkCountry();
 
@@ -935,3 +863,4 @@ checkCountry();
 
 </body>
 </html>
+    
