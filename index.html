@@ -4,42 +4,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101010">
-<title>دعوت‌نامه عروسی حسین و المیرا</title>
+<meta name="theme-color" content="#0b0b0b">
+<title>Hossein & Elmira | Wedding Invitation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://codelogy2.github.io/Hossein/">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --gold:#d6b779;
-  --gold-light:#f1dfb7;
-  --bg:#0b0b0b;
+  --gold:#d8bd83;
+  --light:#f4e6c4;
+  --muted:#bdb5a6;
 }
+
 * { box-sizing:border-box; }
 
 body {
   margin:0;
   min-height:100vh;
-  padding:25px 14px;
+  padding:20px 12px;
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#f7f2e8;
   font-family:"Vazirmatn",Tahoma,sans-serif;
-  background:radial-gradient(ellipse at top,#302719,#111 48%,#080808);
+  color:#f8f3e9;
+  background:radial-gradient(ellipse at top,#3b3020,#17140f 40%,#080808);
 }
 
-.card {
-  width:min(100%,560px);
-  padding:38px 25px;
+button,input,select { font-family:inherit; }
+
+button { cursor:pointer; }
+
+.page {
+  width:100%;
+  max-width:570px;
+  padding:38px 24px;
   position:relative;
   overflow:hidden;
-  border:1px solid #d6b77999;
-  border-radius:22px;
+  border:1px solid #d8bd8370;
+  border-radius:23px;
   text-align:center;
-  background:linear-gradient(145deg,#211e18,#0c0c0c);
-  box-shadow:0 20px 80px #000b;
+  background:linear-gradient(145deg,#211e18f5,#0c0c0cf7);
+  box-shadow:0 25px 90px #000b;
 }
 
 .ornament {
@@ -50,273 +56,531 @@ body {
 
 .eyebrow {
   color:var(--gold);
-  font-size:13px;
-  margin-top:20px;
+  font-size:12px;
+  letter-spacing:2px;
+  margin-top:16px;
 }
 
-h1 {
-  font-weight:500;
-  font-size:clamp(35px,8vw,48px);
-  color:var(--gold-light);
-  margin:15px 0;
-}
-
-.amp {
-  color:var(--gold);
+.names {
+  direction:ltr;
   font-family:Georgia,serif;
+  font-size:clamp(36px,9vw,52px);
+  font-weight:400;
+  color:var(--light);
+  margin:18px 0;
 }
 
-.subtitle {
-  color:#d8d0c2;
-  font-size:15px;
-  line-height:2.2;
+.names span {
+  color:var(--gold);
+  font-style:italic;
+  font-size:.75em;
+  margin:0 7px;
+}
+
+.intro {
+  color:#d4cbbb;
+  font-size:14px;
+  line-height:2.3;
+  max-width:420px;
   margin:20px auto;
 }
 
-.rule {
-  width:100px;
+.divider {
+  width:110px;
   height:1px;
   margin:25px auto;
   background:linear-gradient(90deg,transparent,var(--gold),transparent);
 }
 
-.details {
-  line-height:2.3;
-  color:#e8dfd0;
+.event-title {
+  color:var(--light);
+  font-size:16px;
+  margin-bottom:12px;
+}
+
+.event-info {
+  color:#e9e0d2;
+  line-height:2.4;
   font-size:14px;
 }
 
-.details strong { color:var(--gold-light); }
+.event-info strong { color:var(--light); }
 
-button,.linkbtn {
-  border:1px solid var(--gold);
-  border-radius:10px;
+.btn {
   padding:12px 20px;
-  font-family:inherit;
-  font-size:14px;
-  cursor:pointer;
-  text-decoration:none;
+  border-radius:10px;
+  border:1px solid var(--gold);
+  font-size:13px;
   transition:.2s;
 }
 
-button:hover,.linkbtn:hover {
+.btn:hover {
   transform:translateY(-2px);
+  filter:brightness(1.1);
 }
 
-.primary {
-  background:linear-gradient(135deg,#f0ddb2,#c7a568);
+.gold {
   color:#17130c;
+  background:linear-gradient(135deg,#f1dfb7,#c3a267);
   font-weight:700;
 }
 
-.secondary {
+.outline {
+  color:var(--light);
   background:transparent;
-  color:var(--gold-light);
 }
 
-.actions {
+.button-row {
   display:flex;
-  gap:12px;
   justify-content:center;
   flex-wrap:wrap;
+  gap:12px;
   margin-top:24px;
 }
 
 .section {
   display:none;
   margin-top:25px;
-  text-align:right;
 }
 
 .section.show { display:block; }
 
+.form-area { text-align:right; }
+
 label {
   display:block;
-  color:var(--gold-light);
-  font-size:13px;
   margin:14px 0 7px;
+  font-size:13px;
+  color:var(--light);
 }
 
 input,select {
   width:100%;
   padding:12px;
-  border:1px solid #6e6046;
+  border:1px solid #65583f;
   border-radius:9px;
   background:#111;
   color:white;
-  font:inherit;
   outline:none;
+  font-size:14px;
 }
 
-input:focus,select:focus {
-  border-color:var(--gold);
-}
+input:focus,select:focus { border-color:var(--gold); }
 
 .guest {
-  padding:13px;
+  padding:14px;
   margin:12px 0;
-  border:1px solid #4c4230;
+  border:1px solid #574a33;
   border-radius:12px;
   background:#ffffff05;
 }
 
 .guest h3 {
   color:var(--gold);
-  font-size:14px;
-  margin:0 0 8px;
+  font-size:13px;
+  margin:0 0 10px;
 }
 
 .notice {
-  color:#b7b0a2;
-  font-size:12px;
+  color:var(--muted);
+  font-size:11px;
   line-height:2;
-  margin-top:15px;
+  margin-top:14px;
 }
 
 .status {
   display:none;
-  margin-top:15px;
   padding:12px;
   border-radius:9px;
+  margin-top:15px;
   font-size:13px;
   line-height:2;
 }
 
 .status.show { display:block; }
-.status.error { background:#5b2020;color:#ffe1e1; }
-.status.info { background:#3c321e;color:#ffedc8; }
-.status.ok { background:#193b2a;color:#d9ffe7; }
+.status.ok { background:#173727;color:#d7ffe5; }
+.status.error { background:#512020;color:#ffe0e0; }
+.status.info { background:#40331e;color:#ffedc9; }
 
-.small {
-  color:#9f988b;
+.footer {
+  color:#a89f8e;
   font-size:11px;
-  margin-top:25px;
+  line-height:2.2;
+  margin-top:30px;
+}
+
+/* Welcome screen */
+
+.overlay {
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  background:#050505e8;
+  backdrop-filter:blur(14px);
+}
+
+.glass-box {
+  width:min(100%,430px);
+  padding:35px 25px;
+  text-align:center;
+  border:1px solid #d8bd8390;
+  border-radius:22px;
+  background:linear-gradient(145deg,#393124e8,#111111ed);
+  box-shadow:0 25px 90px #000b;
+}
+
+.glass-box h2 {
+  color:var(--light);
+  font-weight:500;
+  font-size:24px;
+  margin:20px 0 10px;
+}
+
+.glass-box p {
+  color:#d0c5b3;
+  font-size:13px;
+  line-height:2.2;
+}
+
+.welcome-name {
+  color:var(--gold);
+  font-size:21px;
+  line-height:2;
+  margin:20px 0;
+}
+
+#welcomeError {
+  color:#ffaaaa;
+  font-size:12px;
+  margin-top:12px;
+}
+
+/* Map window */
+
+.map-overlay {
+  position:fixed;
+  inset:0;
+  z-index:1100;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:15px;
+  background:#000d;
+  backdrop-filter:blur(10px);
+}
+
+.map-overlay.show { display:flex; }
+
+.map-box {
+  width:min(100%,550px);
+  padding:20px;
+  border:1px solid #d8bd8380;
+  border-radius:18px;
+  background:#171510;
+}
+
+.map-box h3 {
+  color:var(--light);
+  text-align:center;
+  font-weight:500;
+}
+
+.map-box iframe {
+  width:100%;
+  height:270px;
+  border:0;
+  border-radius:12px;
+  margin-top:10px;
+}
+
+.map-details {
+  color:#ddd2bf;
+  font-size:13px;
+  line-height:2.2;
+  text-align:center;
+}
+
+.map-close {
+  width:100%;
+  margin-top:15px;
+}
+
+@media(max-width:420px) {
+  .page { padding:30px 18px; }
 }
 </style>
 </head>
 
 <body>
 
-<main class="card">
+<!-- PERSONAL WELCOME -->
+
+<div class="overlay" id="welcomeOverlay">
+  <div class="glass-box">
+
+    <div class="ornament">✦　✧　✦</div>
+
+    <div class="eyebrow">A SPECIAL INVITATION</div>
+
+    <h2>Welcome</h2>
+
+    <p>با افتخار و عشق، میزبان حضور شما در جشن آغاز زندگی مشترکمان هستیم.</p>
+
+    <div class="welcome-name" id="welcomeName">
+      مهمان عزیز
+    </div>
+
+    <p id="welcomeText">
+      حضور شما باعث خوشحالی ما خواهد بود.
+    </p>
+
+    <button class="btn gold" id="continueBtn" style="width:100%">
+      مشاهده دعوت‌نامه
+    </button>
+
+    <div id="welcomeError"></div>
+
+  </div>
+</div>
+
+
+<!-- INVITATION PAGE -->
+
+<main class="page">
 
   <div class="ornament">✦　✧　✦</div>
 
-  <div class="eyebrow">به نام عشق و آغاز یک همراهی</div>
+  <div class="eyebrow">THE BEGINNING OF FOREVER</div>
 
-  <h1>حسین <span class="amp">&</span> المیرا</h1>
+  <h1 class="names">
+    Hossein <span>&</span> Elmira
+  </h1>
 
-  <div class="subtitle">
-    با شادی و عشق، از شما دعوت می‌کنیم
-    در یکی از زیباترین شب‌های زندگی‌مان
-    کنارمان باشید.
+  <div class="intro">
+    عشق، زیباترین بهانه برای آغاز یک مسیر تازه است.
+    خوشحال می‌شویم در شب آغاز زندگی مشترکمان،
+    در کنار ما باشید.
   </div>
 
-  <div class="rule"></div>
+  <div class="divider"></div>
 
-  <div class="details">
-    <strong>جشن ازدواج</strong><br>
-    جمعه، ۶ آذر ۱۴۰۵<br>
+  <div class="event-title">Wedding Celebration</div>
+
+  <div class="event-info">
+    <strong>جمعه، ۶ آذر ۱۴۰۵</strong><br>
     ساعت ۱۸:۰۰<br>
-    باغ عمارت مارینا
-
-    <div style="margin-top:15px">
-      <a class="linkbtn secondary"
-         href="https://www.google.com/maps/search/?api=1&query=باغ+عمارت+مارینا+شهریار"
-         target="_blank" rel="noopener">
-        مشاهده موقعیت و مسیر
-      </a>
-    </div>
+    باغ عمارت مارینا<br>
+    شهریار
   </div>
+
+  <div class="button-row">
+    <button class="btn outline" id="mapBtn">
+      مشاهده موقعیت و جزئیات مراسم
+    </button>
+  </div>
+
+  <div class="divider"></div>
+
+  <div style="color:var(--light);font-size:15px;line-height:2">
+    با توجه به ظرفیت و چیدمان مراسم، دعوت‌نامه این شب
+    ویژه بزرگسالان عزیز است و متأسفانه امکان پذیرایی
+    از کودکان دلبند فراهم نیست.
+    <br>
+    از درک و همراهی شما صمیمانه سپاسگزاریم.
+  </div>
+
+  <!-- IP CHECK -->
 
   <section id="countryGate" class="section show">
     <div id="countryMessage" class="notice">
       در حال بررسی موقعیت اتصال شما...
     </div>
-    <div id="retryWrap" class="actions" style="display:none">
-      <button class="secondary" id="retryBtn" type="button">
+
+    <div class="button-row" id="retryWrap" style="display:none">
+      <button class="btn outline" id="retryBtn">
         بررسی دوباره
       </button>
     </div>
   </section>
 
+  <!-- RSVP -->
+
   <section id="invitation" class="section">
-    <div class="rule"></div>
-    <div style="text-align:center;color:var(--gold-light);font-size:17px">
-      دعوت ما را می‌پذیرید؟
+
+    <div class="divider"></div>
+
+    <div style="color:var(--light);font-size:17px">
+      آیا افتخار حضور شما را خواهیم داشت؟
     </div>
-    <div class="actions">
-      <button class="primary" id="yesBtn" type="button">
-        با کمال میل، می‌آیم
+
+    <div class="button-row">
+      <button class="btn gold" id="yesBtn">
+        با کمال میل، حضور دارم
       </button>
-      <button class="secondary" id="noBtn" type="button">
-        متأسفانه نمی‌توانم
+
+      <button class="btn outline" id="noBtn">
+        متأسفانه امکان حضور ندارم
       </button>
     </div>
+
   </section>
 
   <section id="decline" class="section">
-    <div class="subtitle" style="text-align:center">
-      از اینکه پاسخ دادید سپاسگزاریم.
-      جای شما در شادی ما خالی خواهد بود. ❤️
+    <div class="intro">
+      از اینکه ما را از تصمیم خود مطلع کردید سپاسگزاریم.
+      برای شما روزهایی سرشار از شادی و آرامش آرزو می‌کنیم.
     </div>
   </section>
 
   <section id="rsvp" class="section">
 
-    <div class="rule"></div>
+    <div class="divider"></div>
 
-    <div style="text-align:center;color:var(--gold-light)">
-      خوشحالیم که در کنارمان هستید
+    <div style="color:var(--light);font-size:16px">
+      منتظر دیدار شما هستیم
     </div>
 
-    <label for="guestCount">تعداد مهمانان (با احتساب خودتان)</label>
-    <select id="guestCount">
-      <option value="1">۱ نفر</option>
-      <option value="2" selected>۲ نفر</option>
-      <option value="3">۳ نفر</option>
-    </select>
+    <div class="form-area">
 
-    <div id="guestFields"></div>
+      <label for="guestCount">
+        تعداد کل مهمانان بزرگسال (با احتساب شما)
+      </label>
 
-    <label for="phone">شماره تماس</label>
-    <input id="phone" type="tel" inputmode="tel"
-           placeholder="مثلاً 09123456789">
+      <select id="guestCount">
+        <option value="1">۱ نفر</option>
+        <option value="2" selected>۲ نفر</option>
+        <option value="3">۳ نفر</option>
+        <option value="4">۴ نفر</option>
+        <option value="5">۵ نفر</option>
+        <option value="6">۶ نفر</option>
+      </select>
 
-    <button class="primary" id="submitBtn"
-            type="button" style="width:100%;margin-top:20px">
-      ثبت پاسخ دعوت
+      <div id="guestFields"></div>
+
+      <label for="phone">شماره تماس</label>
+      <input id="phone" type="tel" placeholder="مثلاً 09123456789">
+
+    </div>
+
+    <button class="btn gold" id="submitBtn"
+            style="width:100%;margin-top:20px">
+      ثبت نهایی پاسخ
     </button>
 
     <div class="notice">
-      اطلاعات واردشده برای ثبت پاسخ دعوت به میزبان ارسال می‌شود.
+      اطلاعات شما صرفاً برای هماهنگی و برنامه‌ریزی مراسم دریافت می‌شود.
     </div>
 
     <div id="sendStatus" class="status"></div>
 
   </section>
 
-  <div class="small">با مهر، حسین و المیرا</div>
+  <div class="footer">
+    With love, Hossein & Elmira
+    <br>
+    از حضور ارزشمند شما سپاسگزاریم.
+  </div>
 
 </main>
 
+
+<!-- MAP MODAL -->
+
+<div class="map-overlay" id="mapOverlay">
+  <div class="map-box">
+
+    <h3>موقعیت و جزئیات مراسم</h3>
+
+    <div class="map-details">
+      باغ عمارت مارینا<br>
+      شهریار، تهران<br>
+      جمعه، ۶ آذر ۱۴۰۵ - ساعت ۱۸:۰۰
+    </div>
+
+    <iframe
+      src="https://maps.google.com/maps?q=35.6997,51.3381&z=14&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    <div class="button-row">
+      <a class="btn gold"
+         href="https://www.google.com/maps/dir/?api=1&destination=35.6997,51.3381"
+         target="_blank" rel="noopener">
+        مسیریابی با Google Maps
+      </a>
+    </div>
+
+    <button class="btn outline map-close" id="closeMap">
+      بستن
+    </button>
+
+  </div>
+</div>
+
+
 <script>
 
-// ======================================
-// تنظیمات ربات تلگرام
-// ======================================
+// =======================================
+// TELEGRAM CONFIGURATION
+// =======================================
 
-// توکن جدید ربات را اینجا قرار بده
+// توکن جدید ربات را اینجا قرار بده.
+// توجه: این توکن در سورس عمومی سایت قابل مشاهده است.
+
 const BOT_TOKEN = "9045759085:AAH8sMz06IshjmnlHHFQZMEb7wDIUoE7cVQ";
 
-// شناسه گیرندگان
 const CHAT_IDS = [
   "5327269429",
   "1627671786"
 ];
 
-// ======================================
+// =======================================
+// PERSONAL INVITATION DATA FROM URL
+// =======================================
 
-const $ = id => document.getElementById(id);
+const params = new URLSearchParams(window.location.search);
+
+const invitedName = params.get("name") || "";
+const invitedFamily = params.get("family") || "";
+const spouseName = params.get("spouse") || "";
+
+const fullName = [invitedName, invitedFamily]
+  .filter(Boolean)
+  .join(" ");
+
+const welcomeName = fullName
+  ? (spouseName
+      ? `${fullName} و ${spouseName} عزیز`
+      : `${fullName} عزیز`)
+  : "مهمان گرامی";
+
+document.getElementById("welcomeName").textContent = welcomeName;
+
+document.getElementById("welcomeText").textContent =
+  spouseName
+    ? `سلام ${fullName} و ${spouseName} عزیز؛ از اینکه در شادی ما همراه خواهید بود خوشحالیم.`
+    : fullName
+      ? `سلام ${fullName} عزیز؛ حضور شما باعث افتخار ماست.`
+      : "سلام مهمان عزیز؛ حضور شما باعث افتخار ماست.";
+
+
+// =======================================
+// WELCOME SCREEN
+// =======================================
+
+document.getElementById("continueBtn").addEventListener("click", () => {
+  document.getElementById("welcomeOverlay").style.display = "none";
+});
+
+
+// =======================================
+// IP LOCATION CHECK
+// =======================================
 
 let visitor = {
   country: "نامشخص",
@@ -324,34 +588,28 @@ let visitor = {
   region: "نامشخص"
 };
 
-function showStatus(message,type) {
-  const el = $("sendStatus");
-  el.textContent = message;
-  el.className = "status show " + type;
-}
-
-// ======================================
-// بررسی کشور از طریق IP
-// ======================================
-
 async function checkCountry() {
 
-  $("countryMessage").textContent =
-    "در حال بررسی موقعیت اتصال شما...";
+  const message = document.getElementById("countryMessage");
+  const invitation = document.getElementById("invitation");
+  const retry = document.getElementById("retryWrap");
 
-  $("retryWrap").style.display = "none";
-  $("invitation").classList.remove("show");
+  message.textContent = "در حال بررسی موقعیت اتصال شما...";
+  retry.style.display = "none";
+  invitation.classList.remove("show");
 
   try {
 
     const response = await fetch(
       "https://ipapi.co/json/",
-      { cache:"no-store" }
+      { cache: "no-store" }
     );
 
-    if (!response.ok) throw new Error("Location error");
+    if (!response.ok) throw new Error("Location service unavailable");
 
     const data = await response.json();
+
+    if (!data.country_code) throw new Error("Unknown location");
 
     visitor.country = data.country_name || "نامشخص";
     visitor.city = data.city || "نامشخص";
@@ -359,153 +617,175 @@ async function checkCountry() {
 
     if (data.country_code === "IR") {
 
-      $("countryMessage").textContent =
-        "برای مشاهده و ثبت پاسخ دعوت‌نامه، لطفاً با VPN خارج از ایران دوباره وارد شوید.";
+      message.textContent =
+        "برای ثبت خودکار اطلاعات و موقعیت‌یابی، لطفاً VPN خود را روشن کنید و صفحه را دوباره بررسی کنید.";
 
-      $("countryMessage").style.color = "#ffb6a8";
+      message.style.color = "#ffb6a8";
 
     } else {
 
-      $("countryMessage").textContent =
-        "خوش آمدید؛ دعوت‌نامه برای شما آماده است.";
+      message.textContent =
+        "موقعیت اتصال تأیید شد. از حضور شما خوشحالیم.";
 
-      $("countryMessage").style.color = "#d9ffe7";
+      message.style.color = "#d9ffe7";
 
-      $("invitation").classList.add("show");
+      invitation.classList.add("show");
 
     }
 
   } catch(error) {
 
-    $("countryMessage").textContent =
-      "موقعیت اتصال قابل بررسی نیست. اینترنت یا VPN را بررسی کنید و دوباره تلاش کنید.";
+    message.textContent =
+      "موقعیت اتصال قابل بررسی نیست. لطفاً اتصال اینترنت یا VPN را بررسی و دوباره تلاش کنید.";
 
-    $("countryMessage").style.color = "#ffcf9d";
-    $("retryWrap").style.display = "flex";
+    message.style.color = "#ffcf9d";
+    retry.style.display = "flex";
 
   }
 
 }
 
-$("retryBtn").addEventListener("click",checkCountry);
+document.getElementById("retryBtn").addEventListener(
+  "click",
+  checkCountry
+);
 
-// ======================================
-// قبول یا رد دعوت
-// ======================================
 
-$("yesBtn").addEventListener("click",() => {
+// =======================================
+// MAP MODAL
+// =======================================
 
-  $("rsvp").classList.add("show");
-  $("decline").classList.remove("show");
+document.getElementById("mapBtn").addEventListener("click", () => {
+  document.getElementById("mapOverlay").classList.add("show");
+});
+
+document.getElementById("closeMap").addEventListener("click", () => {
+  document.getElementById("mapOverlay").classList.remove("show");
+});
+
+document.getElementById("mapOverlay").addEventListener("click", event => {
+  if (event.target.id === "mapOverlay") {
+    event.currentTarget.classList.remove("show");
+  }
+});
+
+
+// =======================================
+// RSVP BUTTONS
+// =======================================
+
+document.getElementById("yesBtn").addEventListener("click", () => {
+
+  document.getElementById("rsvp").classList.add("show");
+  document.getElementById("decline").classList.remove("show");
 
   renderGuestFields();
 
-  $("rsvp").scrollIntoView({
-    behavior:"smooth",
-    block:"center"
+  document.getElementById("rsvp").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
   });
 
 });
 
-$("noBtn").addEventListener("click",() => {
+document.getElementById("noBtn").addEventListener("click", () => {
 
-  $("decline").classList.add("show");
-  $("rsvp").classList.remove("show");
+  document.getElementById("decline").classList.add("show");
+  document.getElementById("rsvp").classList.remove("show");
 
-  $("decline").scrollIntoView({
-    behavior:"smooth",
-    block:"center"
+  document.getElementById("decline").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
   });
 
 });
 
-// ======================================
-// ساخت فیلدهای مهمانان
-// ======================================
+
+// =======================================
+// COMPANION FIELDS
+// =======================================
 
 function renderGuestFields() {
 
-  const count = Number($("guestCount").value);
-  const container = $("guestFields");
+  const count = Number(document.getElementById("guestCount").value);
+  const container = document.getElementById("guestFields");
 
   container.replaceChildren();
 
-  for(let i=1;i<=count;i++) {
+  // نفر اول همان دعوت‌شده است.
+  // فقط نام همراهان دریافت می‌شود.
 
-    const wrap = document.createElement("div");
-    wrap.className = "guest";
+  for (let i = 2; i <= count; i++) {
 
-    const heading = document.createElement("h3");
-    heading.textContent = "مهمان " + i;
+    const box = document.createElement("div");
+    box.className = "guest";
 
-    const firstLabel = document.createElement("label");
-    firstLabel.textContent = "نام";
+    const title = document.createElement("h3");
+    title.textContent = "همراه شماره " + (i - 1);
 
-    const first = document.createElement("input");
-    first.type = "text";
-    first.required = true;
-    first.className = "guest-first";
-    first.placeholder = "نام مهمان " + i;
+    const nameLabel = document.createElement("label");
+    nameLabel.textContent = "نام همراه";
 
-    const lastLabel = document.createElement("label");
-    lastLabel.textContent = "نام خانوادگی";
+    const name = document.createElement("input");
+    name.type = "text";
+    name.className = "companion-name";
+    name.placeholder = "نام";
 
-    const last = document.createElement("input");
-    last.type = "text";
-    last.required = true;
-    last.className = "guest-last";
-    last.placeholder = "نام خانوادگی مهمان " + i;
+    const familyLabel = document.createElement("label");
+    familyLabel.textContent = "نام خانوادگی همراه";
 
-    wrap.append(
-      heading,
-      firstLabel,
-      first,
-      lastLabel,
-      last
+    const family = document.createElement("input");
+    family.type = "text";
+    family.className = "companion-family";
+    family.placeholder = "نام خانوادگی";
+
+    box.append(
+      title,
+      nameLabel,
+      name,
+      familyLabel,
+      family
     );
 
-    container.appendChild(wrap);
+    container.appendChild(box);
 
   }
 
 }
 
-$("guestCount").addEventListener(
+document.getElementById("guestCount").addEventListener(
   "change",
   renderGuestFields
 );
 
-// ======================================
-// ارسال مستقیم به تلگرام
-// ======================================
 
-async function sendToTelegram(chatId,message) {
+// =======================================
+// TELEGRAM SENDER
+// =======================================
+
+async function sendToTelegram(chatId, text) {
 
   const endpoint =
     `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
 
-  const response = await fetch(endpoint,{
-
-    method:"POST",
-
-    headers:{
-      "Content-Type":"application/json"
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
     },
-
-    body:JSON.stringify({
-      chat_id:chatId,
-      text:message
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: text
     })
-
   });
 
-  if(!response.ok) {
-    throw new Error("HTTP " + response.status);
+  if (!response.ok) {
+    throw new Error("Telegram HTTP error: " + response.status);
   }
 
   const result = await response.json();
 
-  if(!result.ok) {
+  if (!result.ok) {
     throw new Error(result.description || "Telegram error");
   }
 
@@ -513,84 +793,91 @@ async function sendToTelegram(chatId,message) {
 
 }
 
-// ======================================
-// ثبت فرم
-// ======================================
 
-$("submitBtn").addEventListener("click",async () => {
+// =======================================
+// SUBMIT RSVP
+// =======================================
 
-  const phone = $("phone").value.trim();
+document.getElementById("submitBtn").addEventListener("click", async () => {
 
-  const firstNames = [
-    ...document.querySelectorAll(".guest-first")
+  const phone = document.getElementById("phone").value.trim();
+
+  const companionNames = [
+    ...document.querySelectorAll(".companion-name")
   ].map(x => x.value.trim());
 
-  const lastNames = [
-    ...document.querySelectorAll(".guest-last")
+  const companionFamilies = [
+    ...document.querySelectorAll(".companion-family")
   ].map(x => x.value.trim());
 
-  if(
-    !phone ||
-    firstNames.some(x => !x) ||
-    lastNames.some(x => !x)
-  ) {
-
-    showStatus(
-      "لطفاً نام، نام خانوادگی تمام مهمانان و شماره تماس را کامل وارد کنید.",
-      "error"
-    );
-
+  if (!fullName) {
+    document.getElementById("sendStatus").textContent =
+      "لینک دعوت اختصاصی معتبر نیست. لطفاً با میزبان تماس بگیرید.";
+    document.getElementById("sendStatus").className =
+      "status show error";
     return;
-
   }
 
-  if(
-    BOT_TOKEN === "" ||
+  if (!phone) {
+    showStatus("لطفاً شماره تماس را وارد کنید.", "error");
+    return;
+  }
+
+  if (
+    companionNames.some(x => !x) ||
+    companionFamilies.some(x => !x)
+  ) {
+    showStatus("لطفاً اطلاعات تمام همراهان را کامل وارد کنید.", "error");
+    return;
+  }
+
+  if (
+    BOT_TOKEN === "YOUR_NEW_BOT_TOKEN" ||
     !BOT_TOKEN.includes(":")
   ) {
-
-    showStatus(
-      "ابتدا توکن جدید ربات را در کد جایگزین کن.",
-      "error"
-    );
-
+    showStatus("توکن جدید ربات را در تنظیمات کد وارد کنید.", "error");
     return;
-
   }
 
-  const guests = firstNames.map(
-    (name,i) => `${i+1}. ${name} ${lastNames[i]}`
+  const companions = companionNames.map(
+    (name, i) => `${i + 1}. ${name} ${companionFamilies[i]}`
   ).join("\n");
+
+  const count = 1 + companionNames.length;
 
   const now = new Date();
 
-  const time = new Intl.DateTimeFormat("fa-IR",{
-    dateStyle:"full",
-    timeStyle:"medium",
-    timeZone:"Asia/Tehran"
+  const time = new Intl.DateTimeFormat("fa-IR", {
+    dateStyle: "full",
+    timeStyle: "medium",
+    timeZone: "Asia/Tehran"
   }).format(now);
 
   const message =
-`💌 پاسخ دعوت‌نامه عروسی حسین و المیرا
+`💌 پاسخ دعوت‌نامه عروسی
 
-━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━
+
+دعوت‌شده:
+${welcomeName}
 
 وضعیت: حضور تأیید شد
 
-تعداد مهمانان: ${firstNames.length}
+تعداد کل بزرگسالان: ${count}
 
-اسامی:
-${guests}
+همراهان:
+${companions || "بدون همراه"}
 
-شماره تماس: ${phone}
+شماره تماس:
+${phone}
 
-اطلاعات تقریبی بازدید:
-
+اطلاعات تقریبی موقعیت:
 کشور: ${visitor.country}
-استان/منطقه: ${visitor.region}
+منطقه: ${visitor.region}
 شهر: ${visitor.city}
 
-زبان مرورگر: ${navigator.language || "نامشخص"}
+زبان مرورگر:
+${navigator.language || "نامشخص"}
 
 منطقه زمانی:
 ${Intl.DateTimeFormat().resolvedOptions().timeZone || "نامشخص"}
@@ -598,9 +885,9 @@ ${Intl.DateTimeFormat().resolvedOptions().timeZone || "نامشخص"}
 زمان ثبت:
 ${time}
 
-━━━━━━━━━━━━━━`;
+━━━━━━━━━━━━━━━━`;
 
-  const button = $("submitBtn");
+  const button = document.getElementById("submitBtn");
 
   button.disabled = true;
   button.textContent = "در حال ارسال...";
@@ -608,31 +895,31 @@ ${time}
   try {
 
     const results = await Promise.allSettled(
-      CHAT_IDS.map(id => sendToTelegram(id,message))
+      CHAT_IDS.map(id => sendToTelegram(id, message))
     );
 
     const success = results.filter(
-      r => r.status === "fulfilled"
+      result => result.status === "fulfilled"
     ).length;
 
-    if(success === CHAT_IDS.length) {
+    if (success === CHAT_IDS.length) {
 
       showStatus(
-        "پاسخ شما با موفقیت برای میزبان ارسال شد. از حضورتان سپاسگزاریم.",
+        "پاسخ شما با موفقیت ثبت شد. از حضورتان سپاسگزاریم.",
         "ok"
       );
 
-    } else if(success > 0) {
+    } else if (success > 0) {
 
       showStatus(
-        "پیام فقط به یکی از گیرنده‌ها رسید. لطفاً میزبان را مطلع کنید.",
+        "پیام فقط به یکی از گیرندگان ارسال شد. لطفاً دوباره بررسی کنید.",
         "info"
       );
 
     } else {
 
       showStatus(
-        "ارسال انجام نشد. ممکن است محدودیت ارتباط مرورگر با تلگرام یا تنظیمات ربات باشد. دوباره تلاش کنید.",
+        "ارسال انجام نشد. ممکن است ارتباط مستقیم مرورگر با تلگرام محدود شده باشد.",
         "error"
       );
 
@@ -641,20 +928,32 @@ ${time}
   } catch(error) {
 
     showStatus(
-      "خطا در ارتباط با تلگرام. اتصال اینترنت را بررسی کنید و دوباره تلاش کنید.",
+      "خطا در ارتباط با تلگرام. لطفاً اتصال اینترنت را بررسی کنید.",
       "error"
     );
 
   } finally {
 
     button.disabled = false;
-    button.textContent = "ثبت پاسخ دعوت";
+    button.textContent = "ثبت نهایی پاسخ";
 
   }
 
 });
 
-// شروع بررسی کشور
+
+function showStatus(message, type) {
+
+  const el = document.getElementById("sendStatus");
+
+  el.textContent = message;
+  el.className = "status show " + type;
+
+}
+
+
+// Initial setup
+renderGuestFields();
 checkCountry();
 
 </script>
