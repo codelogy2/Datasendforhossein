@@ -370,25 +370,39 @@ input:focus,select:focus { border-color:var(--gold); }
 
   <div class="event-title">Wedding Celebration</div>
 
-  <div class="event-info">
-    <strong>جمعه، ۶ آذر ۱۴۰۵</strong><br>
-    ساعت ۱۸:۰۰<br>
-    باغ عمارت مارینا<br>
-    شهریار
-  </div>
 
-  <div class="button-row">
-    <button class="btn outline" id="mapBtn">
-      مشاهده موقعیت و جزئیات مراسم
-    </button>
-  </div>
+<h3>موقعیت و جزئیات مراسم</h3>
+
+<div class="map-details">
+  باغ عمارت مارینا<br>
+  شهریار، تهران<br>
+  جمعه، ۶ آذر ۱۴۰۵ - ساعت ۱۸:۰۰
+</div>
+
+<iframe
+  src="https://codelogy2.github.io/Hossein/"
+  loading="lazy"
+  referrerpolicy="no-referrer"
+  style="width:100%; height:300px; border:0; border-radius:15px;">
+</iframe>
+
+<div class="button-row">
+  <a class="btn gold"
+     href="https://codelogy2.github.io/Hossein/"
+     target="_blank" rel="noopener">
+    مشاهده موقعیت و جزئیات مراسم
+  </a>
+</div>
+
+<button class="btn outline map-close" id="closeMap">
+  بستن
+</button>
+
 
   <div class="divider"></div>
 
   <div style="color:var(--light);font-size:15px;line-height:2">
-    با توجه به ظرفیت و چیدمان مراسم، دعوت‌نامه این شب
-    ویژه بزرگسالان عزیز است و متأسفانه امکان پذیرایی
-    از کودکان دلبند فراهم نیست.
+    چنانچه افتخار ميزبانى شما را نداريم الطفا تا تاريخ ٣٨اآبان مارا مطلع فرمابيد
     <br>
     از درک و همراهی شما صمیمانه سپاسگزاریم.
   </div>
@@ -453,10 +467,6 @@ input:focus,select:focus { border-color:var(--gold); }
       <select id="guestCount">
         <option value="1">۱ نفر</option>
         <option value="2" selected>۲ نفر</option>
-        <option value="3">۳ نفر</option>
-        <option value="4">۴ نفر</option>
-        <option value="5">۵ نفر</option>
-        <option value="6">۶ نفر</option>
       </select>
 
       <div id="guestFields"></div>
