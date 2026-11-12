@@ -1,71 +1,670 @@
+
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ارسال پیام تست به تلگرام</title>
-  <style>
-    *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;display:grid;place-items:center;padding:22px;background:#101114;color:#f4f1ea;font-family:Tahoma,Arial,sans-serif}
-    main{width:min(100%,480px);padding:28px;border:1px solid #383838;border-radius:18px;background:#191a1e;box-shadow:0 18px 55px #0007}
-    h1{margin:0 0 10px;font-size:22px}
-    p{color:#b8b8b8;line-height:1.9;font-size:13px}
-    textarea{width:100%;min-height:110px;padding:13px;border:1px solid #45464c;border-radius:10px;background:#111216;color:#fff;font:inherit;resize:vertical}
-    button{width:100%;margin-top:18px;padding:14px;border:0;border-radius:10px;background:#d2b477;color:#171717;font-size:15px;font-weight:bold;cursor:pointer}
-    button:disabled{opacity:.6;cursor:wait}
-    #status{margin-top:15px;min-height:24px;font-size:13px;line-height:1.8}
-    .ok{color:#70d69a}.err{color:#ff8989}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
+<title>دعوت‌نامه عروسی حسین و المیرا</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold:#d6b779;
+  --gold-light:#f1dfb7;
+  --bg:#0b0b0b;
+}
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  min-height:100vh;
+  padding:25px 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#f7f2e8;
+  font-family:"Vazirmatn",Tahoma,sans-serif;
+  background:radial-gradient(ellipse at top,#302719,#111 48%,#080808);
+}
+
+.card {
+  width:min(100%,560px);
+  padding:38px 25px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid #d6b77999;
+  border-radius:22px;
+  text-align:center;
+  background:linear-gradient(145deg,#211e18,#0c0c0c);
+  box-shadow:0 20px 80px #000b;
+}
+
+.ornament {
+  color:var(--gold);
+  letter-spacing:9px;
+  font-size:20px;
+}
+
+.eyebrow {
+  color:var(--gold);
+  font-size:13px;
+  margin-top:20px;
+}
+
+h1 {
+  font-weight:500;
+  font-size:clamp(35px,8vw,48px);
+  color:var(--gold-light);
+  margin:15px 0;
+}
+
+.amp {
+  color:var(--gold);
+  font-family:Georgia,serif;
+}
+
+.subtitle {
+  color:#d8d0c2;
+  font-size:15px;
+  line-height:2.2;
+  margin:20px auto;
+}
+
+.rule {
+  width:100px;
+  height:1px;
+  margin:25px auto;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+.details {
+  line-height:2.3;
+  color:#e8dfd0;
+  font-size:14px;
+}
+
+.details strong { color:var(--gold-light); }
+
+button,.linkbtn {
+  border:1px solid var(--gold);
+  border-radius:10px;
+  padding:12px 20px;
+  font-family:inherit;
+  font-size:14px;
+  cursor:pointer;
+  text-decoration:none;
+  transition:.2s;
+}
+
+button:hover,.linkbtn:hover {
+  transform:translateY(-2px);
+}
+
+.primary {
+  background:linear-gradient(135deg,#f0ddb2,#c7a568);
+  color:#17130c;
+  font-weight:700;
+}
+
+.secondary {
+  background:transparent;
+  color:var(--gold-light);
+}
+
+.actions {
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:24px;
+}
+
+.section {
+  display:none;
+  margin-top:25px;
+  text-align:right;
+}
+
+.section.show { display:block; }
+
+label {
+  display:block;
+  color:var(--gold-light);
+  font-size:13px;
+  margin:14px 0 7px;
+}
+
+input,select {
+  width:100%;
+  padding:12px;
+  border:1px solid #6e6046;
+  border-radius:9px;
+  background:#111;
+  color:white;
+  font:inherit;
+  outline:none;
+}
+
+input:focus,select:focus {
+  border-color:var(--gold);
+}
+
+.guest {
+  padding:13px;
+  margin:12px 0;
+  border:1px solid #4c4230;
+  border-radius:12px;
+  background:#ffffff05;
+}
+
+.guest h3 {
+  color:var(--gold);
+  font-size:14px;
+  margin:0 0 8px;
+}
+
+.notice {
+  color:#b7b0a2;
+  font-size:12px;
+  line-height:2;
+  margin-top:15px;
+}
+
+.status {
+  display:none;
+  margin-top:15px;
+  padding:12px;
+  border-radius:9px;
+  font-size:13px;
+  line-height:2;
+}
+
+.status.show { display:block; }
+.status.error { background:#5b2020;color:#ffe1e1; }
+.status.info { background:#3c321e;color:#ffedc8; }
+.status.ok { background:#193b2a;color:#d9ffe7; }
+
+.small {
+  color:#9f988b;
+  font-size:11px;
+  margin-top:25px;
+}
+</style>
 </head>
+
 <body>
-<main>
-  <h1>ارسال پیام آزمایشی تلگرام</h1>
-  <p>با زدن دکمه، پیام زیر به چت تلگرام با شناسه مقصد تنظیم‌شده ارسال می‌شود.</p>
-  <textarea id="message">سلام! پیام آزمایشی سایت عروسی با موفقیت ارسال شد.</textarea>
-  <button id="send">ارسال پیام تست</button>
-  <div id="status" role="status"></div>
+
+<main class="card">
+
+  <div class="ornament">✦　✧　✦</div>
+
+  <div class="eyebrow">به نام عشق و آغاز یک همراهی</div>
+
+  <h1>حسین <span class="amp">&</span> المیرا</h1>
+
+  <div class="subtitle">
+    با شادی و عشق، از شما دعوت می‌کنیم
+    در یکی از زیباترین شب‌های زندگی‌مان
+    کنارمان باشید.
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="details">
+    <strong>جشن ازدواج</strong><br>
+    جمعه، ۶ آذر ۱۴۰۵<br>
+    ساعت ۱۸:۰۰<br>
+    باغ عمارت مارینا
+
+    <div style="margin-top:15px">
+      <a class="linkbtn secondary"
+         href="https://www.google.com/maps/search/?api=1&query=باغ+عمارت+مارینا+شهریار"
+         target="_blank" rel="noopener">
+        مشاهده موقعیت و مسیر
+      </a>
+    </div>
+  </div>
+
+  <section id="countryGate" class="section show">
+    <div id="countryMessage" class="notice">
+      در حال بررسی موقعیت اتصال شما...
+    </div>
+    <div id="retryWrap" class="actions" style="display:none">
+      <button class="secondary" id="retryBtn" type="button">
+        بررسی دوباره
+      </button>
+    </div>
+  </section>
+
+  <section id="invitation" class="section">
+    <div class="rule"></div>
+    <div style="text-align:center;color:var(--gold-light);font-size:17px">
+      دعوت ما را می‌پذیرید؟
+    </div>
+    <div class="actions">
+      <button class="primary" id="yesBtn" type="button">
+        با کمال میل، می‌آیم
+      </button>
+      <button class="secondary" id="noBtn" type="button">
+        متأسفانه نمی‌توانم
+      </button>
+    </div>
+  </section>
+
+  <section id="decline" class="section">
+    <div class="subtitle" style="text-align:center">
+      از اینکه پاسخ دادید سپاسگزاریم.
+      جای شما در شادی ما خالی خواهد بود. ❤️
+    </div>
+  </section>
+
+  <section id="rsvp" class="section">
+
+    <div class="rule"></div>
+
+    <div style="text-align:center;color:var(--gold-light)">
+      خوشحالیم که در کنارمان هستید
+    </div>
+
+    <label for="guestCount">تعداد مهمانان (با احتساب خودتان)</label>
+    <select id="guestCount">
+      <option value="1">۱ نفر</option>
+      <option value="2" selected>۲ نفر</option>
+      <option value="3">۳ نفر</option>
+      <option value="4">۴ نفر</option>
+      <option value="5">۵ نفر</option>
+      <option value="6">۶ نفر</option>
+      <option value="7">۷ نفر</option>
+      <option value="8">۸ نفر</option>
+      <option value="9">۹ نفر</option>
+      <option value="10">۱۰ نفر</option>
+    </select>
+
+    <div id="guestFields"></div>
+
+    <label for="phone">شماره تماس</label>
+    <input id="phone" type="tel" inputmode="tel"
+           placeholder="مثلاً 09123456789">
+
+    <button class="primary" id="submitBtn"
+            type="button" style="width:100%;margin-top:20px">
+      ثبت پاسخ دعوت
+    </button>
+
+    <div class="notice">
+      اطلاعات واردشده برای ثبت پاسخ دعوت به میزبان ارسال می‌شود.
+    </div>
+
+    <div id="sendStatus" class="status"></div>
+
+  </section>
+
+  <div class="small">با مهر، حسین و المیرا</div>
+
 </main>
+
 <script>
-  // توکن و شناسه مقصد برای تست داخل فایل قرار داده شده‌اند.
-  const BOT_TOKEN = "9045759085:AAH8sMz06IshjmnlHHFQZMEb7wDIUoE7cVQ";
-  const CHAT_ID = "5327269429";
 
-  const button = document.getElementById("send");
-  const statusBox = document.getElementById("status");
+// ======================================
+// تنظیمات ربات تلگرام
+// ======================================
 
-  button.addEventListener("click", async () => {
-    const message = document.getElementById("message").value.trim();
-    if (!message) {
-      statusBox.className = "err";
-      statusBox.textContent = "متن پیام خالی است.";
-      return;
+// توکن جدید ربات را اینجا قرار بده
+const BOT_TOKEN = "YOUR_NEW_BOT_TOKEN";
+
+// شناسه گیرندگان
+const CHAT_IDS = [
+  "5327269429",
+  "1627671786"
+];
+
+// ======================================
+
+const $ = id => document.getElementById(id);
+
+let visitor = {
+  country: "نامشخص",
+  city: "نامشخص",
+  region: "نامشخص"
+};
+
+function showStatus(message,type) {
+  const el = $("sendStatus");
+  el.textContent = message;
+  el.className = "status show " + type;
+}
+
+// ======================================
+// بررسی کشور از طریق IP
+// ======================================
+
+async function checkCountry() {
+
+  $("countryMessage").textContent =
+    "در حال بررسی موقعیت اتصال شما...";
+
+  $("retryWrap").style.display = "none";
+  $("invitation").classList.remove("show");
+
+  try {
+
+    const response = await fetch(
+      "https://ipapi.co/json/",
+      { cache:"no-store" }
+    );
+
+    if (!response.ok) throw new Error("Location error");
+
+    const data = await response.json();
+
+    visitor.country = data.country_name || "نامشخص";
+    visitor.city = data.city || "نامشخص";
+    visitor.region = data.region || "نامشخص";
+
+    if (data.country_code === "IR") {
+
+      $("countryMessage").textContent =
+        "برای مشاهده و ثبت پاسخ دعوت‌نامه، لطفاً با VPN خارج از ایران دوباره وارد شوید.";
+
+      $("countryMessage").style.color = "#ffb6a8";
+
+    } else {
+
+      $("countryMessage").textContent =
+        "خوش آمدید؛ دعوت‌نامه برای شما آماده است.";
+
+      $("countryMessage").style.color = "#d9ffe7";
+
+      $("invitation").classList.add("show");
+
     }
 
-    button.disabled = true;
-    statusBox.className = "";
-    statusBox.textContent = "در حال ارسال...";
+  } catch(error) {
 
-    try {
-      const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({chat_id: CHAT_ID, text: message})
-      });
-      const result = await response.json();
+    $("countryMessage").textContent =
+      "موقعیت اتصال قابل بررسی نیست. اینترنت یا VPN را بررسی کنید و دوباره تلاش کنید.";
 
-      if (response.ok && result.ok) {
-        statusBox.className = "ok";
-        statusBox.textContent = "پیام با موفقیت ارسال شد.";
-      } else {
-        statusBox.className = "err";
-        statusBox.textContent = "ارسال ناموفق: " + (result.description || "خطای نامشخص");
-      }
-    } catch (error) {
-      statusBox.className = "err";
-      statusBox.textContent = "خطا در ارتباط: " + error.message;
-    } finally {
-      button.disabled = false;
-    }
+    $("countryMessage").style.color = "#ffcf9d";
+    $("retryWrap").style.display = "flex";
+
+  }
+
+}
+
+$("retryBtn").addEventListener("click",checkCountry);
+
+// ======================================
+// قبول یا رد دعوت
+// ======================================
+
+$("yesBtn").addEventListener("click",() => {
+
+  $("rsvp").classList.add("show");
+  $("decline").classList.remove("show");
+
+  renderGuestFields();
+
+  $("rsvp").scrollIntoView({
+    behavior:"smooth",
+    block:"center"
   });
+
+});
+
+$("noBtn").addEventListener("click",() => {
+
+  $("decline").classList.add("show");
+  $("rsvp").classList.remove("show");
+
+  $("decline").scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+});
+
+// ======================================
+// ساخت فیلدهای مهمانان
+// ======================================
+
+function renderGuestFields() {
+
+  const count = Number($("guestCount").value);
+  const container = $("guestFields");
+
+  container.replaceChildren();
+
+  for(let i=1;i<=count;i++) {
+
+    const wrap = document.createElement("div");
+    wrap.className = "guest";
+
+    const heading = document.createElement("h3");
+    heading.textContent = "مهمان " + i;
+
+    const firstLabel = document.createElement("label");
+    firstLabel.textContent = "نام";
+
+    const first = document.createElement("input");
+    first.type = "text";
+    first.required = true;
+    first.className = "guest-first";
+    first.placeholder = "نام مهمان " + i;
+
+    const lastLabel = document.createElement("label");
+    lastLabel.textContent = "نام خانوادگی";
+
+    const last = document.createElement("input");
+    last.type = "text";
+    last.required = true;
+    last.className = "guest-last";
+    last.placeholder = "نام خانوادگی مهمان " + i;
+
+    wrap.append(
+      heading,
+      firstLabel,
+      first,
+      lastLabel,
+      last
+    );
+
+    container.appendChild(wrap);
+
+  }
+
+}
+
+$("guestCount").addEventListener(
+  "change",
+  renderGuestFields
+);
+
+// ======================================
+// ارسال مستقیم به تلگرام
+// ======================================
+
+async function sendToTelegram(chatId,message) {
+
+  const endpoint =
+    `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+  const response = await fetch(endpoint,{
+
+    method:"POST",
+
+    headers:{
+      "Content-Type":"application/json"
+    },
+
+    body:JSON.stringify({
+      chat_id:chatId,
+      text:message
+    })
+
+  });
+
+  if(!response.ok) {
+    throw new Error("HTTP " + response.status);
+  }
+
+  const result = await response.json();
+
+  if(!result.ok) {
+    throw new Error(result.description || "Telegram error");
+  }
+
+  return true;
+
+}
+
+// ======================================
+// ثبت فرم
+// ======================================
+
+$("submitBtn").addEventListener("click",async () => {
+
+  const phone = $("phone").value.trim();
+
+  const firstNames = [
+    ...document.querySelectorAll(".guest-first")
+  ].map(x => x.value.trim());
+
+  const lastNames = [
+    ...document.querySelectorAll(".guest-last")
+  ].map(x => x.value.trim());
+
+  if(
+    !phone ||
+    firstNames.some(x => !x) ||
+    lastNames.some(x => !x)
+  ) {
+
+    showStatus(
+      "لطفاً نام، نام خانوادگی تمام مهمانان و شماره تماس را کامل وارد کنید.",
+      "error"
+    );
+
+    return;
+
+  }
+
+  if(
+    BOT_TOKEN === "YOUR_NEW_BOT_TOKEN" ||
+    !BOT_TOKEN.includes(":")
+  ) {
+
+    showStatus(
+      "ابتدا توکن جدید ربات را در کد جایگزین کن.",
+      "error"
+    );
+
+    return;
+
+  }
+
+  const guests = firstNames.map(
+    (name,i) => `${i+1}. ${name} ${lastNames[i]}`
+  ).join("\n");
+
+  const now = new Date();
+
+  const time = new Intl.DateTimeFormat("fa-IR",{
+    dateStyle:"full",
+    timeStyle:"medium",
+    timeZone:"Asia/Tehran"
+  }).format(now);
+
+  const message =
+`💌 پاسخ دعوت‌نامه عروسی حسین و المیرا
+
+━━━━━━━━━━━━━━
+
+وضعیت: حضور تأیید شد
+
+تعداد مهمانان: ${firstNames.length}
+
+اسامی:
+${guests}
+
+شماره تماس: ${phone}
+
+اطلاعات تقریبی بازدید:
+
+کشور: ${visitor.country}
+استان/منطقه: ${visitor.region}
+شهر: ${visitor.city}
+
+زبان مرورگر: ${navigator.language || "نامشخص"}
+
+منطقه زمانی:
+${Intl.DateTimeFormat().resolvedOptions().timeZone || "نامشخص"}
+
+زمان ثبت:
+${time}
+
+━━━━━━━━━━━━━━`;
+
+  const button = $("submitBtn");
+
+  button.disabled = true;
+  button.textContent = "در حال ارسال...";
+
+  try {
+
+    const results = await Promise.allSettled(
+      CHAT_IDS.map(id => sendToTelegram(id,message))
+    );
+
+    const success = results.filter(
+      r => r.status === "fulfilled"
+    ).length;
+
+    if(success === CHAT_IDS.length) {
+
+      showStatus(
+        "پاسخ شما با موفقیت برای میزبان ارسال شد. از حضورتان سپاسگزاریم.",
+        "ok"
+      );
+
+    } else if(success > 0) {
+
+      showStatus(
+        "پیام فقط به یکی از گیرنده‌ها رسید. لطفاً میزبان را مطلع کنید.",
+        "info"
+      );
+
+    } else {
+
+      showStatus(
+        "ارسال انجام نشد. ممکن است محدودیت ارتباط مرورگر با تلگرام یا تنظیمات ربات باشد. دوباره تلاش کنید.",
+        "error"
+      );
+
+    }
+
+  } catch(error) {
+
+    showStatus(
+      "خطا در ارتباط با تلگرام. اتصال اینترنت را بررسی کنید و دوباره تلاش کنید.",
+      "error"
+    );
+
+  } finally {
+
+    button.disabled = false;
+    button.textContent = "ثبت پاسخ دعوت";
+
+  }
+
+});
+
+// شروع بررسی کشور
+checkCountry();
+
 </script>
+
 </body>
 </html>
